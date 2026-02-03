@@ -1,0 +1,441 @@
+:root{
+  --bg:#0b0b10;
+  --text:#f3f3f7;
+  --muted:#b7b7c6;
+  --accent:#ff4d8d;
+
+  --border: rgba(255,255,255,.12);
+  --shadow: 0 18px 60px rgba(0,0,0,.55);
+
+  --radius-lg: 26px;
+  --radius-md: 18px;
+  --radius-sm: 14px;
+
+  --cardA: rgba(255,255,255,.10);
+  --cardB: rgba(255,255,255,.05);
+}
+
+*{ box-sizing:border-box; }
+html, body{ height:100%; }
+
+body{
+  margin:0;
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  padding:24px;
+  color:var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  background:
+    radial-gradient(1200px 600px at 20% 0%, rgba(36,17,42,.95), transparent 70%),
+    radial-gradient(900px 500px at 90% 20%, rgba(18,32,58,.95), transparent 70%),
+    radial-gradient(700px 700px at 50% 100%, rgba(255,77,141,.12), transparent 60%),
+    var(--bg);
+}
+
+/* =========================
+   Fundo com fotos flutuantes
+   ========================= */
+.floating-photos{
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.float-img{
+  position: absolute;
+  top: 0;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,.10);
+  opacity: .13;
+  filter: blur(2px) saturate(1.10) contrast(1.02);
+  animation: floatUp linear infinite;
+  will-change: transform;
+}
+
+@keyframes floatUp{
+  from{ transform: translateY(110vh) rotate(0deg); }
+  to{ transform: translateY(-140vh) rotate(12deg); }
+}
+
+/* =========================
+   Layout principal
+   ========================= */
+.wrap{
+  width: min(980px, 100%);
+  position: relative;
+  z-index: 2;
+}
+
+.card{
+  border-radius: var(--radius-lg);
+  padding: 26px;
+  background: linear-gradient(180deg, var(--cardA), var(--cardB));
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background: radial-gradient(600px 220px at 20% 0%, rgba(255,255,255,.12), transparent 60%);
+  pointer-events:none;
+}
+
+/* =========================
+   Cabeçalho
+   ========================= */
+.hero{
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255,255,255,.10);
+}
+
+.badge{
+  display:inline-flex;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(255,77,141,.16);
+  border: 1px solid rgba(255,77,141,.35);
+  color: #ffd1e2;
+  font-weight:900;
+}
+
+.title{
+  margin: 14px 0 6px;
+  font-size: clamp(28px, 4vw, 46px);
+  letter-spacing: -0.5px;
+}
+
+.subtitle{
+  margin: 0 0 10px;
+  color: var(--muted);
+}
+
+.name, .name2{
+  color:#ffd1e2;
+  font-weight:900;
+}
+
+.dash{ opacity:.7; padding:0 6px; }
+
+.mini{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:13px;
+  color: rgba(255,255,255,.82);
+}
+
+.dot{
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background: var(--accent);
+}
+
+/* =========================
+   Blocos
+   ========================= */
+.block{ padding-top: 18px; }
+
+.message{
+  font-size: 18px;
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+
+/* Stats */
+.stats{
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:14px;
+}
+
+.stat{
+  background: rgba(0,0,0,.22);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: var(--radius-md);
+  padding:14px;
+  text-align:center;
+  transition: transform .15s ease;
+}
+
+.stat:hover{ transform: translateY(-2px); }
+
+.k{ font-size:30px; font-weight:900; }
+.l{ font-size:13px; color:var(--muted); }
+
+/* Botões */
+.actions{
+  display:flex;
+  gap:10px;
+  margin-top:14px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  border:0;
+  padding:10px 14px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg,#ff4d8d,#ff7a59);
+  color:#120915;
+  font-weight:900;
+  cursor:pointer;
+  transition: transform .12s ease;
+}
+
+.btn:hover{ transform: translateY(-1px); }
+
+.btn.ghost{
+  background: rgba(255,255,255,.08);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.14);
+}
+
+/* =========================
+   Galeria
+   ========================= */
+.section-title{ margin-bottom:12px; }
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(2,1fr);
+  gap:12px;
+}
+
+.ph{
+  border-radius: var(--radius-md);
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.14);
+}
+
+.ph img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  transition: transform .2s ease;
+}
+
+.ph:hover img{ transform: scale(1.04); }
+
+/* =========================
+   Nota
+   ========================= */
+.note{
+  margin-top:18px;
+  padding:16px;
+  border-radius: var(--radius-md);
+  background: rgba(255,77,141,.08);
+  border:1px dashed rgba(255,77,141,.45);
+}
+
+.heart{ color:var(--accent); }
+
+/* =========================
+   Carta + Envelope
+   ========================= */
+.letterWrap{ display:none; margin-top:18px; }
+.letterWrap.open{ display:block; }
+
+.letter-head{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:10px;
+}
+
+.stamp{
+  padding:6px 10px;
+  border-radius:999px;
+  background: rgba(255,255,255,.08);
+  font-size:12px;
+}
+
+.envelope{
+  position:relative;
+  height:380px;
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.14);
+}
+
+.env-back{
+  position:absolute;
+  inset:0;
+  background: linear-gradient(135deg, rgba(255,77,141,.18), rgba(255,255,255,.06));
+}
+
+.env-flap{
+  position:absolute;
+  top:0; left:0; right:0;
+  height:55%;
+  background: linear-gradient(180deg, rgba(255,77,141,.28), rgba(255,255,255,.06));
+  clip-path: polygon(0 0,100% 0,50% 72%);
+  transform-origin: top;
+  transition: transform 1.2s cubic-bezier(.2,.8,.2,1);
+}
+
+.env-front{
+  position:absolute;
+  bottom:0; left:0; right:0;
+  height:55%;
+  background: rgba(255,255,255,.06);
+  clip-path: polygon(0 100%,100% 100%,100% 0,50% 65%,0 0);
+}
+
+.env-paper{
+  position:absolute;
+  left:20px; right:20px;
+  bottom:18px;
+  height:86%;
+  background: rgba(255,255,255,.08);
+  border-radius:16px;
+  padding:14px;
+  transform: translateY(44%);
+  transition: transform 1.4s cubic-bezier(.2,.8,.2,1);
+}
+
+.envelope.open .env-flap{ transform: rotateX(180deg); }
+.envelope.open .env-paper{ transform: translateY(0); }
+
+/* Selo */
+.env-seal{
+  position:absolute;
+  top:52%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  width:78px;
+  height:78px;
+  border-radius:50%;
+  background: radial-gradient(circle,#ff7fb0,#ff4d8d);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:4px;
+  font-weight:900;
+  color:#120915;
+  transition: opacity .9s ease, transform .9s ease;
+}
+
+.envelope.open .env-seal{
+  opacity:0;
+  transform: translate(-50%,-50%) scale(.85);
+}
+
+/* Papel */
+.paper-top{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:8px;
+}
+
+.typed{
+  font-family:"Georgia","Times New Roman",serif;
+  font-size:16.5px;
+  line-height:1.85;
+  white-space:pre-wrap;
+  overflow:auto;
+  height: calc(100% - 60px);
+}
+
+.hidden{ display:none; }
+
+/* =========================
+   Rodapé
+   ========================= */
+.footer{
+  margin-top:18px;
+  text-align:center;
+  color:var(--muted);
+}
+
+/* =========================
+   Mobile
+   ========================= */
+@media(max-width:760px){
+  .grid{ grid-template-columns:1fr; }
+  .ph img{ height:240px; }
+  .stats{ grid-template-columns:1fr; }
+  .envelope{ height:420px; }
+}
+
+
+/* =========================
+   Ajustes finos (mobile e geral)
+   ========================= */
+
+/* 1) "Especial" menor e mais discreto */
+.stamp{
+  font-size: 11px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  opacity: .92;
+  align-self: flex-start;     /* evita crescer */
+  white-space: nowrap;        /* não quebra linha */
+}
+
+/* 2) Dar mais espaço entre título e stamp */
+.letter-head{
+  align-items: flex-start;
+  gap: 12px;
+}
+
+/* 3) Carta: texto um pouco menor e mais leve */
+.typed{
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+/* 4) Dar mais "respiro" dentro do papel */
+.env-paper{
+  padding: 12px;
+}
+
+/* 5) Botão Fechar: afastar do envelope */
+.letter-actions{
+  margin-top: 14px;
+  padding-top: 6px;
+}
+
+/* 6) Envelope: ligeiramente mais alto no mobile para caber melhor */
+@media (max-width: 760px){
+  .envelope{
+    height: 460px;            /* aumenta um pouco */
+  }
+
+  /* texto ainda mais pequeno no mobile (fica elegante) */
+  .typed{
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* data no topo: menor para não ocupar espaço */
+  .paper-date{
+    font-size: 11px;
+    padding: 3px 7px;
+  }
+
+  /* título do papel: menor para não esmagar */
+  .paper-title{
+    font-size: 13px;
+  }
+}
+
+
+.confetti{
+  position: fixed;
+  top: -10px;
+  width: 8px;
+  height: 12px;
+  border-radius: 3px;
+  z-index: 9999;
+  pointer-events: none;
+  background: hsl(var(--h), 90%, 70%);
+}

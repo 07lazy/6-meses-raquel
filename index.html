@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feliz 6 Meses ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Fundo com fotos flutuantes -->
+  <div class="floating-photos" aria-hidden="true">
+    <img src="photos/imag1.jpeg" class="float-img" alt="">
+    <img src="photos/imag2.jpeg" class="float-img" alt="">
+    <img src="photos/imag3.jpeg" class="float-img" alt="">
+    <img src="photos/imag4.jpeg" class="float-img" alt="">
+  </div>
+
+  <main class="wrap">
+    <section class="card">
+
+      <!-- Capa -->
+      <header class="hero">
+        <div class="badge">💖 6 meses</div>
+        <h1 class="title">Feliz 6 Meses ❤️</h1>
+        <p class="subtitle">
+          Para <span class="name">Raquel Quembo</span>
+          <span class="dash">—</span>
+          de <span class="name2">Petrolino Santo</span>
+        </p>
+
+        <div class="mini">
+          <span class="dot"></span>
+          <span id="sinceDate">—</span>
+          <span class="dot"></span>
+          <span id="todayDate">—</span>
+        </div>
+      </header>
+
+      <!-- Mensagem -->
+      <section class="block">
+        <p class="message">
+          Seis meses de amor, crescimento e escolhas diárias.
+          Eu escolheria você todos os dias.
+        </p>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="k" id="daysTogether">—</div>
+            <div class="l">dias juntos</div>
+          </div>
+          <div class="stat">
+            <div class="k" id="monthsTogether">—</div>
+            <div class="l">meses completados</div>
+          </div>
+          <div class="stat">
+            <div class="k" id="nextMilestone">—</div>
+            <div class="l">dias para o próximo mês</div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="confettiBtn" class="btn">Celebrar ✨</button>
+          <button id="toggleLetterBtn" class="btn ghost">Abrir carta 💌</button>
+        </div>
+      </section>
+
+      <!-- Galeria -->
+      <section class="block">
+        <h2 class="section-title">Os nossos momentos</h2>
+        <div class="grid">
+          <figure class="ph"><img src="photos/imag1.jpeg" alt=""></figure>
+          <figure class="ph"><img src="photos/imag2.jpeg" alt=""></figure>
+          <figure class="ph"><img src="photos/imag3.jpeg" alt=""></figure>
+          <figure class="ph"><img src="photos/imag4.jpeg" alt=""></figure>
+        </div>
+      </section>
+
+      <!-- Nota -->
+      <section class="note">
+        <h2>Abrir quando vires isto</h2>
+        <p>
+          Tenho orgulho de nós. Eu escolho-te hoje e sempre.
+          <span class="heart">♥</span>
+        </p>
+      </section>
+
+      <!-- Carta com envelope -->
+      <section class="letterWrap" id="letterBox">
+
+        <div class="letter-head">
+          <h2>Uma carta para nós</h2>
+          <span class="stamp">💌 Especial</span>
+        </div>
+
+        <div class="envelope" id="envelope">
+          <div class="env-back"></div>
+          <div class="env-flap"></div>
+
+          <!-- SELO -->
+          <div class="env-seal">
+            <span>P</span>
+            <span class="heart">❤️</span>
+            <span>R</span>
+          </div>
+
+          <!-- Carta -->
+          <div class="env-paper">
+            <div class="paper-top">
+              <span class="paper-title">Para o amor da minha vida</span>
+              <span class="paper-date" id="paperDate">—</span>
+            </div>
+
+            <div class="typed" id="typedText"></div>
+
+            <!-- Texto original (para o efeito de digitação) -->
+            <textarea id="letterRaw" class="hidden">
+Para o amor da minha vida
+
+Eu não sei como dizer isso de uma maneira simples, então vou falar do meu jeito.
+Eu nunca pensei que algum dia teria alguém assim como você na minha vida.
+Eu te amo muito, meu amor. Obrigada por me fazer sentir amada da forma mais pura
+e genuína que eu mereço, mesmo quando eu acreditava que nunca iria viver uma coisa
+tão intensa. Eu vivi — e ainda vivo — ao teu lado.
+
+Por me mostrar o teu amor todos os dias, não só com palavras, mas no olhar,
+nas carícias, nos gestos, nas ações que me fazem te admirar a cada dia que passa.
+
+Ter te encontrado foi, sem dúvida nenhuma, a melhor coisa que me aconteceu,
+porque de certa maneira encontrei a mim também.
+Você era a coisa que faltava na minha vida:
+a luz, talvez a direção, e um dos melhores presentes que Deus me deu.
+
+Em um momento de pensamentos  
+Lá estava eu em uma noite estrelada  
+Joguei um olhar ao céu relento de estrelas  
+Logo lembrei de outra estrela  
+Uma mais forte e com maior brilho que as outras  
+
+Não estou falando do sol  
+Estou me referindo a você  
+
+Te amo, amor.
+
+Assinado: Raquel
+            </textarea>
+
+            <div class="paper-sign">
+              <span>Com amor,</span>
+              <strong>Raquel</strong>
+            </div>
+          </div>
+
+          <div class="env-front"></div>
+        </div>
+
+        <div class="letter-actions">
+          <button class="btn ghost" id="closeLetterBtn">Fechar 💌</button>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <small>Feito com amor, por Petrolino Santo.</small>
+      </footer>
+
+    </section>
+  </main>
+
+  <script>
+    window.__START_DATE__ = "2025-08-02";
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
