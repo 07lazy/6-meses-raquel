@@ -3,12 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Feliz 6 Meses ❤️</title>
+  <title>Feliz — Meses ❤️</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Fundo com fotos flutuantes -->
   <div class="floating-photos" aria-hidden="true">
     <img src="photos/imag1.jpeg" class="float-img" alt="">
     <img src="photos/imag2.jpeg" class="float-img" alt="">
@@ -19,13 +18,15 @@
   <main class="wrap">
     <section class="card">
 
-      <!-- Capa -->
       <header class="hero">
-        <div class="badge">💖 6 meses</div>
-        <h1 class="title">Feliz 6 Meses ❤️</h1>
+        <div class="badge" id="badgeMonths">💖 — meses</div>
+
+        <h1 class="title" id="heroTitle">
+          Feliz — Meses <span class="heart">❤️</span>
+        </h1>
+
         <p class="subtitle">
           Para <span class="name">Raquel Quembo</span>
-          <span class="dash">—</span>
           de <span class="name2">Petrolino Santo</span>
         </p>
 
@@ -37,10 +38,9 @@
         </div>
       </header>
 
-      <!-- Mensagem -->
       <section class="block">
         <p class="message">
-          Seis meses de amor, crescimento e escolhas diárias.
+          <span id="messageMonths">— meses</span> de amor, crescimento e escolhas diárias.
           Eu escolheria você todos os dias.
         </p>
 
@@ -49,10 +49,12 @@
             <div class="k" id="daysTogether">—</div>
             <div class="l">dias juntos</div>
           </div>
+
           <div class="stat">
             <div class="k" id="monthsTogether">—</div>
             <div class="l">meses completados</div>
           </div>
+
           <div class="stat">
             <div class="k" id="nextMilestone">—</div>
             <div class="l">dias para o próximo mês</div>
@@ -65,7 +67,65 @@
         </div>
       </section>
 
-      <!-- Galeria -->
+      <section class="block reasons-section">
+        <div class="section-top">
+          <h2 class="section-title">Razões pelas quais eu te amo</h2>
+          <p class="section-subtitle">
+            Há coisas em ti que o meu coração reconheceu antes mesmo das palavras.
+          </p>
+        </div>
+
+        <div class="reasons-grid">
+          <article class="reason-card">
+            <span class="reason-number">01</span>
+            <h3>O teu jeito</h3>
+            <p>
+              Há uma doçura no teu jeito de existir que acalma o meu coração e torna tudo mais leve.
+            </p>
+          </article>
+
+          <article class="reason-card">
+            <span class="reason-number">02</span>
+            <h3>O teu sorriso</h3>
+            <p>
+              O teu sorriso tem luz. Quando tu sorris, até os meus dias mais cansados ficam mais bonitos.
+            </p>
+          </article>
+
+          <article class="reason-card">
+            <span class="reason-number">03</span>
+            <h3>A tua força</h3>
+            <p>
+              Eu admiro a força que carregas, a forma como segues em frente e ainda consegues amar com ternura.
+            </p>
+          </article>
+
+          <article class="reason-card">
+            <span class="reason-number">04</span>
+            <h3>O teu coração</h3>
+            <p>
+              Tu tens um coração raro, desses que cuidam, escutam, abraçam e fazem a gente sentir casa.
+            </p>
+          </article>
+
+          <article class="reason-card">
+            <span class="reason-number">05</span>
+            <h3>A paz que me dás</h3>
+            <p>
+              No meio de tanta coisa, tu és paz. Contigo, o amor parece simples, bonito e verdadeiro.
+            </p>
+          </article>
+
+          <article class="reason-card">
+            <span class="reason-number">06</span>
+            <h3>Porque és tu</h3>
+            <p>
+              No fim de tudo, amo-te porque és tu e no teu amor encontrei um lugar onde quero sempre ficar.
+            </p>
+          </article>
+        </div>
+      </section>
+
       <section class="block">
         <h2 class="section-title">Os nossos momentos</h2>
         <div class="grid">
@@ -76,7 +136,6 @@
         </div>
       </section>
 
-      <!-- Nota -->
       <section class="note">
         <h2>Abrir quando vires isto</h2>
         <p>
@@ -85,7 +144,6 @@
         </p>
       </section>
 
-      <!-- Carta com envelope -->
       <section class="letterWrap" id="letterBox">
 
         <div class="letter-head">
@@ -97,14 +155,12 @@
           <div class="env-back"></div>
           <div class="env-flap"></div>
 
-          <!-- SELO -->
           <div class="env-seal">
             <span>P</span>
             <span class="heart">❤️</span>
             <span>R</span>
           </div>
 
-          <!-- Carta -->
           <div class="env-paper">
             <div class="paper-top">
               <span class="paper-title">Para o amor da minha vida</span>
@@ -113,7 +169,6 @@
 
             <div class="typed" id="typedText"></div>
 
-            <!-- Texto original (para o efeito de digitação) -->
             <textarea id="letterRaw" class="hidden">
 Para o amor da minha vida
 
@@ -121,7 +176,7 @@ Eu não sei como dizer isso de uma maneira simples, então vou falar do meu jeit
 Eu nunca pensei que algum dia teria alguém assim como você na minha vida.
 Eu te amo muito, meu amor. Obrigada por me fazer sentir amada da forma mais pura
 e genuína que eu mereço, mesmo quando eu acreditava que nunca iria viver uma coisa
-tão intensa. Eu vivi — e ainda vivo — ao teu lado.
+tão intensa. Eu vivi e ainda vivo ao teu lado.
 
 Por me mostrar o teu amor todos os dias, não só com palavras, mas no olhar,
 nas carícias, nos gestos, nas ações que me fazem te admirar a cada dia que passa.
@@ -131,14 +186,14 @@ porque de certa maneira encontrei a mim também.
 Você era a coisa que faltava na minha vida:
 a luz, talvez a direção, e um dos melhores presentes que Deus me deu.
 
-Em um momento de pensamentos  
-Lá estava eu em uma noite estrelada  
-Joguei um olhar ao céu relento de estrelas  
-Logo lembrei de outra estrela  
-Uma mais forte e com maior brilho que as outras  
+Em um momento de pensamentos
+Lá estava eu em uma noite estrelada
+Joguei um olhar ao céu relento de estrelas
+Logo lembrei de outra estrela
+Uma mais forte e com maior brilho que as outras
 
-Não estou falando do sol  
-Estou me referindo a você  
+Não estou falando do sol
+Estou me referindo a você
 
 Te amo, amor.
 
@@ -161,6 +216,7 @@ Assinado: Raquel
 
       <footer class="footer">
         <small>Feito com amor, por Petrolino Santo.</small>
+        <div class="footer-note">Cada dia contigo é o meu lugar favorito. ❤️</div>
       </footer>
 
     </section>
